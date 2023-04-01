@@ -4,13 +4,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import SignIn from '../screen/SignIn';
-import LogIn from '../screen/LogIn';
+import Login from '../screen/Login';
 import Home from '../screen/Home';
 import Content from '../screen/Content';
 import Exercises from '../screen/Exercises';
 import Relaxtion from '../screen/Relaxtion';
 import Bookmarks from '../screen/Bookmarks';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Explore from '../screen/Explore';
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -21,12 +22,12 @@ function HomeStacks() {
   );
 }
 
-const ContentStack = createNativeStackNavigator();
-function ContentStacks() {
+const ExploreStack = createNativeStackNavigator();
+function ExploreStacks() {
   return (
-    <ContentStack.Navigator screenOptions={{ headerShown: false }}>
-      <ContentStack.Screen name="Content Stack" component={Content} />
-    </ContentStack.Navigator>
+    <ExploreStack.Navigator screenOptions={{ headerShown: false }}>
+      <ExploreStack.Screen name="Explore Stack" component={Explore} />
+    </ExploreStack.Navigator>
   );
 }
 
@@ -94,7 +95,7 @@ function Tabs() {
               }}
             >
               <Image
-                source={require('../storages/img/icon/home.png')}
+                source={require('../storages/nav/home.png')}
                 resizeMode="contain"
                 style={{
                   width: 30,
@@ -108,8 +109,8 @@ function Tabs() {
       />
 
       <Tab.Screen
-        name="Content"
-        component={ContentStacks}
+        name="Explore"
+        component={ExploreStacks}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
@@ -121,7 +122,7 @@ function Tabs() {
               }}
             >
               <Image
-                source={require('../storages/img/icon/content.png')}
+                source={require('../storages/nav/explore.png')}
                 resizeMode="contain"
                 style={{
                   width: 30,
@@ -175,7 +176,7 @@ function Tabs() {
               }}
             >
               <Image
-                source={require('../storages/img/icon/relax.png')}
+                source={require('../storages/nav/news.png')}
                 resizeMode="contain"
                 style={{
                   width: 30,
@@ -201,7 +202,7 @@ function Tabs() {
               }}
             >
               <Image
-                source={require('../storages/img/icon/bookmark.png')}
+                source={require('../storages/nav/fill.png')}
                 resizeMode="contain"
                 style={{
                   width: 30,
@@ -223,7 +224,7 @@ const RootStack = () => {
     <NavigationContainer>
       <Stacks.Navigator screenOptions={{ headerShown: false }}>
         <Stacks.Screen name="SignIn" component={SignIn} />
-        <Stacks.Screen name="Login" component={LogIn} />
+        <Stacks.Screen name="Login" component={Login} />
         <Stacks.Screen name="Tabs" component={Tabs} />
       </Stacks.Navigator>
     </NavigationContainer>
