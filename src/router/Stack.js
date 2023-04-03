@@ -1,17 +1,16 @@
-import { View, Text, Image } from 'react-native';
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
-import SignIn from '../screen/SignIn';
-import Login from '../screen/Login';
-import Home from '../screen/Home';
-import Content from '../screen/Content';
-import Exercises from '../screen/Exercises';
-import Relaxtion from '../screen/Relaxtion';
-import Bookmarks from '../screen/Bookmarks';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Explore from '../screen/Explore';
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import LogIn from "../screen/Login";
+import Home from "../screen/Home";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Explore from "../screen/Explore";
+import Add from "../screen/Add";
+import Signin from "../screen/SignIn";
+import Recipe from "../screen/Recipe";
+import Follow from "../screen/Follow";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -31,32 +30,41 @@ function ExploreStacks() {
   );
 }
 
-const ExercisesStack = createNativeStackNavigator();
-function ExercisesStacks() {
+const AddStack = createNativeStackNavigator();
+function AddStacks() {
   return (
-    <ExercisesStack.Navigator screenOptions={{ headerShown: false }}>
-      <ExercisesStack.Screen name="Exercises Stack" component={Exercises} />
-    </ExercisesStack.Navigator>
+    <AddStack.Navigator screenOptions={{ headerShown: false }}>
+      <AddStack.Screen name="Add Stack" component={Add} />
+    </AddStack.Navigator>
   );
 }
 
-const RelaxtionStack = createNativeStackNavigator();
-function RelaxtionStacks() {
+const RecipeStack = createNativeStackNavigator();
+function RecipeStacks() {
   return (
-    <RelaxtionStack.Navigator screenOptions={{ headerShown: false }}>
-      <RelaxtionStack.Screen name="Relaxtion Stack" component={Relaxtion} />
-    </RelaxtionStack.Navigator>
+    <RecipeStack.Navigator screenOptions={{ headerShown: false }}>
+      <RecipeStack.Screen name="Recipe Stack" component={Recipe} />
+    </RecipeStack.Navigator>
   );
 }
 
-const BookmarksStack = createNativeStackNavigator();
-function BookmarksStacks() {
+const FollowStack = createNativeStackNavigator();
+function FollowStacks() {
   return (
-    <BookmarksStack.Navigator screenOptions={{ headerShown: false }}>
-      <BookmarksStack.Screen name="Bookmarks Stack" component={Bookmarks} />
-    </BookmarksStack.Navigator>
+    <FollowStack.Navigator screenOptions={{ headerShown: false }}>
+      <FollowStack.Screen name="Follow Stack" component={Follow} />
+    </FollowStack.Navigator>
   );
 }
+
+const CustomTabBarButton = ({ children, onPress }) => (
+  <TouchableOpacity
+    style={{ top: -30, justifyContent: "center", alignItems: "center" }}
+    onPress={onPress}
+  >
+    <View style={{ width: 70, height: 70, borderRadius: 35 }}>{children}</View>
+  </TouchableOpacity>
+);
 
 const Tab = createBottomTabNavigator();
 function Tabs() {
@@ -66,10 +74,10 @@ function Tabs() {
         tabBarShowLabel: false,
         tabBarStyle: {
           elevation: 0,
-          backgroundColor: '#5193E1',
-          width: '100%',
-          height: '9%',
-          shadowColor: '#FFF9EC',
+          backgroundColor: "#FFFFFF",
+          width: "100%",
+          height: "9%",
+          shadowColor: "#FFF9EC",
           shadowOffset: {
             width: 5,
             height: 3,
@@ -89,20 +97,29 @@ function Tabs() {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                top: '-5%',
+                alignItems: "center",
+                justifyContent: "center",
+                top: "-5%",
               }}
             >
               <Image
-                source={require('../storages/nav/home.png')}
+                source={require("../storages/nav/home.png")}
                 resizeMode="contain"
                 style={{
-                  width: 30,
-                  height: 30,
-                  tintColor: focused ? '#FFFFFF' : '#EAEAEA',
+                  width: 18.72,
+                  height: 18.72,
+                  tintColor: focused ? "#0047D7" : "#9BB7F0",
                 }}
               ></Image>
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: focused ? "#0047D7" : "#9BB7F0",
+                  marginTop: 6,
+                }}
+              >
+                Trang chủ
+              </Text>
             </View>
           ),
         }}
@@ -116,100 +133,147 @@ function Tabs() {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                top: '-5%',
+                alignItems: "center",
+                justifyContent: "center",
+                top: "-5%",
               }}
             >
               <Image
-                source={require('../storages/nav/explore.png')}
+                source={require("../storages/nav/explore.png")}
                 resizeMode="contain"
                 style={{
-                  width: 30,
-                  height: 30,
-                  tintColor: focused ? '#FFFFFF' : '#EAEAEA',
+                  width: 18.72,
+                  height: 18.72,
+                  tintColor: focused ? "#0047D7" : "#9BB7F0",
                 }}
               ></Image>
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: focused ? "#0047D7" : "#9BB7F0",
+                  marginTop: 6,
+                }}
+              >
+                Khám Phá
+              </Text>
             </View>
           ),
         }}
       />
 
       <Tab.Screen
-        name="Exercises"
-        component={ExercisesStacks}
+        name="Add"
+        component={AddStacks}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                top: '-5%',
+                top: -30,
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              <Image
-                source={require('../storages/img/icon/exercise.png')}
-                resizeMode="contain"
+              <View
                 style={{
-                  width: 30,
-                  height: 30,
-                  tintColor: focused ? '#FFFFFF' : '#EAEAEA',
+                  width: 70,
+                  height: 70,
+                  borderRadius: 35,
+                  backgroundColor: focused ? "#0047D7" : "#D9E3F9",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
-              ></Image>
+              >
+                <Image
+                  source={require("../storages/nav/add.png")}
+                  resizeMode="contain"
+                  style={{
+                    width: 24,
+                    height: 24,
+                    tintColor: focused ? "#9BB7F0" : "#9BB7F0",
+                  }}
+                ></Image>
+              </View>
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: focused ? "#0047D7" : "#9BB7F0",
+                  marginTop: 6,
+                }}
+              >
+                Trang chủ
+              </Text>
             </View>
           ),
         }}
       />
 
       <Tab.Screen
-        name="Relaxtion"
-        component={RelaxtionStacks}
+        name="Recipe"
+        component={RecipeStacks}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                top: '-5%',
+                alignItems: "center",
+                justifyContent: "center",
+                top: "-5%",
               }}
             >
               <Image
-                source={require('../storages/nav/news.png')}
+                source={require("../storages/nav/recipe.png")}
                 resizeMode="contain"
                 style={{
-                  width: 30,
-                  height: 30,
-                  tintColor: focused ? '#FFFFFF' : '#EAEAEA',
+                  width: 18.72,
+                  height: 18.72,
+                  tintColor: focused ? "#0047D7" : "#9BB7F0",
                 }}
               ></Image>
+              <Text
+                style={{
+                  fontSize: 12,
+                  marginTop: 6,
+                  color: focused ? "#0047D7" : "#9BB7F0",
+                }}
+              >
+                Công Thức
+              </Text>
             </View>
           ),
         }}
       />
       <Tab.Screen
-        name="Bookmarks"
-        component={BookmarksStacks}
+        name="Follow"
+        component={FollowStacks}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                top: '-5%',
+                alignItems: "center",
+                justifyContent: "center",
+                top: "-5%",
               }}
             >
               <Image
-                source={require('../storages/nav/fill.png')}
+                source={require("../storages/nav/follow.png")}
                 resizeMode="contain"
                 style={{
-                  width: 30,
-                  height: 30,
-                  tintColor: focused ? '#FFFFFF' : '#EAEAEA',
+                  width: 18.72,
+                  height: 18.72,
+                  tintColor: focused ? "#0047D7" : "#9BB7F0",
                 }}
               ></Image>
+              <Text
+                style={{
+                  fontSize: 12,
+                  marginTop: 6,
+                  color: focused ? "#0047D7" : "#9BB7F0",
+                }}
+              >
+                Theo Dõi
+              </Text>
             </View>
           ),
         }}
@@ -223,8 +287,8 @@ const RootStack = () => {
   return (
     <NavigationContainer>
       <Stacks.Navigator screenOptions={{ headerShown: false }}>
-        <Stacks.Screen name="SignIn" component={SignIn} />
-        <Stacks.Screen name="Login" component={Login} />
+        <Stacks.Screen name="Signin" component={Signin} />
+        <Stacks.Screen name="Login" component={LogIn} />
         <Stacks.Screen name="Tabs" component={Tabs} />
       </Stacks.Navigator>
     </NavigationContainer>

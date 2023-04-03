@@ -5,51 +5,51 @@ import {
   StyleSheet,
   TouchableOpacity,
   Pressable,
-} from 'react-native';
-import React, { useState } from 'react';
-import Logo from '../screenComponent/Logo.js';
+} from "react-native";
+import React, { useState } from "react";
+import Logo from "../screenComponent/Logo.js";
 import {
   Feather,
   FontAwesome5,
   Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
-} from '@expo/vector-icons';
-import { Checkbox } from 'expo-checkbox';
-import Bottom from '../screenComponent/Bottom.js';
-import { useNavigation } from '@react-navigation/native';
+} from "@expo/vector-icons";
+import { Checkbox } from "expo-checkbox";
+import Bottom from "../screenComponent/Bottom.js";
+import { useNavigation } from "@react-navigation/native";
 
-const SignIn = () => {
+const Signin = () => {
   const navigation = useNavigation();
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isChecked, setIsChecked] = useState(false);
 
   const [passwordVisibility, setPasswordVisibility] = useState(true);
-  const [rightIcon, setRightIcon] = useState('eye');
+  const [rightIcon, setRightIcon] = useState("eye");
 
   const handlePasswordVisibility = () => {
-    if (rightIcon === 'eye') {
-      setRightIcon('eye-off');
+    if (rightIcon === "eye") {
+      setRightIcon("eye-off");
       setPasswordVisibility(!passwordVisibility);
-    } else if (rightIcon === 'eye-off') {
-      setRightIcon('eye');
+    } else if (rightIcon === "eye-off") {
+      setRightIcon("eye");
       setPasswordVisibility(!passwordVisibility);
     }
   };
   return (
-    <View style={{ backgroundColor: 'white', height: '100%' }}>
+    <View style={{ backgroundColor: "white", height: "100%" }}>
       <Logo />
-      <View style={{ alignSelf: 'center', marginTop: '8%' }}>
-        <Text style={{ fontSize: 20, fontWeight: 700, color: '#565B73' }}>
+      <View style={{ alignSelf: "center", marginTop: "8%" }}>
+        <Text style={{ fontSize: 20, fontWeight: 700, color: "#565B73" }}>
           Tạo tài khoản
         </Text>
       </View>
       <View
         style={{
-          alignSelf: 'center',
-          marginTop: '5%',
-          width: '80%',
-          height: '100%',
+          alignSelf: "center",
+          marginTop: "5%",
+          width: "80%",
+          height: "100%",
         }}
       >
         <View style={styles.input}>
@@ -63,8 +63,8 @@ const SignIn = () => {
             onChangeText={(text) => setInput(text)}
             placeholder="Tên"
             style={{
-              color: '#ADA4A5',
-              width: '100%',
+              color: "#ADA4A5",
+              width: "100%",
             }}
           />
         </View>
@@ -79,8 +79,8 @@ const SignIn = () => {
             onChangeText={(text) => setInput(text)}
             placeholder="Sô điện thoại"
             style={{
-              color: '#ADA4A5',
-              width: '100%',
+              color: "#ADA4A5",
+              width: "100%",
             }}
           />
         </View>
@@ -95,8 +95,8 @@ const SignIn = () => {
             onChangeText={(text) => setInput(text)}
             placeholder="Email"
             style={{
-              color: '#ADA4A5',
-              width: '100%',
+              color: "#ADA4A5",
+              width: "100%",
             }}
           />
         </View>
@@ -112,8 +112,8 @@ const SignIn = () => {
             onChangeText={(text) => setInput(text)}
             placeholder="Mật khẩu"
             style={{
-              color: '#ADA4A5',
-              width: '80%',
+              color: "#ADA4A5",
+              width: "80%",
             }}
             name="password"
             autoCapitalize="none"
@@ -134,7 +134,7 @@ const SignIn = () => {
             style={styles.checkbox}
             value={isChecked}
             onValueChange={setIsChecked}
-            color={isChecked ? '#5193E1' : undefined}
+            color={isChecked ? "#5193E1" : undefined}
           />
           <Text style={styles.paragraph}>
             By continuing you accept our Privacy Policy and Term of Use
@@ -143,21 +143,21 @@ const SignIn = () => {
         <TouchableOpacity style={styles.btn}>
           <Text style={styles.text}>Đăng ký</Text>
         </TouchableOpacity>
-        <View style={{ marginTop: '5%' }}>
+        <View style={{ marginTop: "5%" }}>
           <Bottom />
         </View>
         <View
           style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            marginTop: '10%',
+            flexDirection: "row",
+            justifyContent: "center",
+            marginTop: "10%",
           }}
         >
           <View>
             <Text>Bạn đã có tài khoản?</Text>
           </View>
-          <TouchableOpacity onPress={() => navigation.push('Login')}>
-            <Text style={{ color: '#5193E1' }}> Đăng nhập</Text>
+          <TouchableOpacity onPress={() => navigation.push("Login")}>
+            <Text style={{ color: "#5193E1" }}> Đăng nhập</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -165,52 +165,52 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Signin;
 
 const styles = StyleSheet.create({
   input: {
-    flexDirection: 'row',
-    height: '7%',
-    borderColor: '#',
+    flexDirection: "row",
+    height: "7%",
+    borderColor: "#",
     borderWidth: 1,
     borderRadius: 14,
-    alignItems: 'center',
-    shadowColor: '#ADA4A5',
+    alignItems: "center",
+    shadowColor: "#ADA4A5",
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 1,
     shadowRadius: 6,
     elevation: 3,
-    marginTop: '5%',
+    marginTop: "5%",
   },
   section: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: '75%',
+    flexDirection: "row",
+    alignItems: "center",
+    width: "75%",
   },
   checkbox: {
-    marginTop: '6%',
-    color: '#ADA4A5',
+    marginTop: "6%",
+    color: "#ADA4A5",
   },
   paragraph: {
-    color: '#ADA4A5',
+    color: "#ADA4A5",
     fontSize: 10,
-    marginTop: '6%',
-    marginLeft: '6%',
+    marginTop: "6%",
+    marginLeft: "6%",
   },
   btn: {
-    marginTop: '6%',
-    width: '100%',
-    backgroundColor: '#5193E1',
-    height: '8%',
+    marginTop: "6%",
+    width: "100%",
+    backgroundColor: "#5193E1",
+    height: "8%",
     borderRadius: 90,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   text: {
-    color: '#ffff',
+    color: "#ffff",
     fontSize: 17,
     lineHeight: 20,
-    textAlign: 'center',
-    fontWeight: '700',
+    textAlign: "center",
+    fontWeight: "700",
   },
 });
