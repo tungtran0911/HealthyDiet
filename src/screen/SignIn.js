@@ -156,7 +156,7 @@ const Signin = () => {
           <View>
             <Text>Bạn đã có tài khoản?</Text>
           </View>
-          <TouchableOpacity onPress={() => navigation.push("Login")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text style={{ color: "#5193E1" }}> Đăng nhập</Text>
           </TouchableOpacity>
         </View>
