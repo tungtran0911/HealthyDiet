@@ -18,7 +18,7 @@ const ProgressCalo = () => {
         borderRadius: 50,
       }}
     >
-      <View style={{ marginTop: "65%", alignSelf: "center" }}>
+      <View style={{ marginTop: "65%" }}>
         <Text
           style={{
             color: "white",
@@ -29,8 +29,49 @@ const ProgressCalo = () => {
         >
           Hôm nay
         </Text>
-        <View>
+        <View style={{ alignSelf: "center" }}>
           <ProgressCircleCalories calories={calories} />
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-around",
+            marginTop: "5%",
+          }}
+        >
+          <View style={{ alignItems: "center" }}>
+            <Text style={{ color: "white" }}>30/200g</Text>
+            <Progress.Bar
+              progress={0.4}
+              width={83}
+              color="white"
+              height={4}
+              style={{ marginVertical: "6%" }}
+            />
+            <Text style={{ color: "white" }}>Carbs</Text>
+          </View>
+          <View style={{ alignItems: "center" }}>
+            <Text style={{ color: "white" }}>30/200g</Text>
+            <Progress.Bar
+              progress={0.4}
+              width={83}
+              color="white"
+              height={4}
+              style={{ marginVertical: "6%" }}
+            />
+            <Text style={{ color: "white" }}>Carbs</Text>
+          </View>
+          <View style={{ alignItems: "center" }}>
+            <Text style={{ color: "white" }}>30/200g</Text>
+            <Progress.Bar
+              progress={0.4}
+              width={83}
+              color="white"
+              height={4}
+              style={{ marginVertical: "6%" }}
+            />
+            <Text style={{ color: "white" }}>Carbs</Text>
+          </View>
         </View>
       </View>
     </View>
