@@ -11,6 +11,10 @@ import Add from "../screen/Add";
 import Signin from "../screen/SignIn";
 import Recipe from "../screen/Recipe";
 import Follow from "../screen/Follow";
+import Hello from "../screen/Hello";
+import AimForm from "../screen/AimForm";
+import GenderForm from "../screen/GenderForm";
+import AgeForm from "../screen/AgeForm";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -289,6 +293,10 @@ const RootStack = () => {
       <Stacks.Navigator screenOptions={{ headerShown: false }}>
         <Stacks.Screen name="Signin" component={Signin} />
         <Stacks.Screen name="Login" component={LogIn} />
+        <Stacks.Screen name="Hello" component={Hello} />
+        <Stacks.Screen name="AimForm" component={AimForm} />
+        <Stacks.Screen name="GenderForm" component={GenderForm} />
+        <Stacks.Screen name="AgeForm" component={AgeForm} />
         <Stacks.Screen name="Tabs" component={Tabs} />
       </Stacks.Navigator>
     </NavigationContainer>

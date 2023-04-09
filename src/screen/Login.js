@@ -107,7 +107,7 @@ const LogIn = () => {
         </View>
         <TouchableOpacity
           style={styles.btn}
-          onPress={() => navigation.push("Tabs")}
+          onPress={() => navigation.navigate("Hello")}
         >
           <Text style={styles.text}>Đăng nhập</Text>
         </TouchableOpacity>
