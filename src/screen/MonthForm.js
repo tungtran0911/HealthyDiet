@@ -2,14 +2,18 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { useState } from "react";
-import { AntDesign } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 
-const GenderForm = () => {
+import { useNavigation } from "@react-navigation/native";
+import { AntDesign } from "@expo/vector-icons";
+
+const MonthForm = () => {
   const navigation = useNavigation();
   const options = [
-    { label: "Nữ", value: "option1" },
-    { label: "Nam", value: "option2" },
+    { label: "1 tháng", value: "option1" },
+    { label: "3 tháng", value: "option2" },
+    { label: "6 tháng", value: "option3" },
+    { label: "1 năm", value: "option4" },
+    { label: "2 năm", value: "option5" },
   ];
 
   const [selectedOption, setSelectedOption] = useState(options[0].value);
@@ -38,10 +42,10 @@ const GenderForm = () => {
           name="arrowright"
           size={40}
           color="black"
-          onPress={() => navigation.navigate("AgeForm")}
+          onPress={() => navigation.navigate("GenderForm")}
         />
       </View>
-      <View style={{ marginTop: "35%" }}>
+      <View style={{ marginTop: "20%" }}>
         <Text
           style={{
             textAlign: "center",
@@ -51,7 +55,7 @@ const GenderForm = () => {
             marginBottom: 32,
           }}
         >
-          Giới tính của bạn:
+          Thời gian đạt được mục tiêu:
         </Text>
         {options.map((option) => (
           <TouchableOpacity
@@ -77,7 +81,7 @@ const GenderForm = () => {
   );
 };
 
-export default GenderForm;
+export default MonthForm;
 
 const styles = StyleSheet.create({
   optionButton: {

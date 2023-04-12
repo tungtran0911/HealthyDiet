@@ -26,12 +26,11 @@ const AimForm = () => {
       <View
         style={{
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "flex-end",
           marginHorizontal: "5%",
           marginTop: "10%",
         }}
       >
-        <AntDesign name="arrowleft" size={40} color="black" />
         <AntDesign
           name="arrowright"
           size={40}

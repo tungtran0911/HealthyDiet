@@ -15,6 +15,9 @@ import Hello from "../screen/Hello";
 import AimForm from "../screen/AimForm";
 import GenderForm from "../screen/GenderForm";
 import AgeForm from "../screen/AgeForm";
+import WeightForm from "../screen/WeightForm";
+import WeightWantForm from "../screen/WeightWantForm";
+import MonthForm from "../screen/MonthForm";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -297,6 +300,9 @@ const RootStack = () => {
         <Stacks.Screen name="AimForm" component={AimForm} />
         <Stacks.Screen name="GenderForm" component={GenderForm} />
         <Stacks.Screen name="AgeForm" component={AgeForm} />
+        <Stacks.Screen name="WeightForm" component={WeightForm} />
+        <Stacks.Screen name="WeightWantForm" component={WeightWantForm} />
+        <Stacks.Screen name="MonthForm" component={MonthForm} />
         <Stacks.Screen name="Tabs" component={Tabs} />
       </Stacks.Navigator>
     </NavigationContainer>
