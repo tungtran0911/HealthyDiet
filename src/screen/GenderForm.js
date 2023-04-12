@@ -1,15 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { TouchableOpacity } from "react-native";
-import { useState } from "react";
-import { AntDesign } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { useState } from 'react';
+import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const GenderForm = () => {
   const navigation = useNavigation();
   const options = [
-    { label: "Nữ", value: "option1" },
-    { label: "Nam", value: "option2" },
+    { label: 'Nữ', value: 'option1' },
+    { label: 'Nam', value: 'option2' },
   ];
 
   const [selectedOption, setSelectedOption] = useState(options[0].value);
@@ -22,10 +21,10 @@ const GenderForm = () => {
     <View>
       <View
         style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginHorizontal: "5%",
-          marginTop: "10%",
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginHorizontal: '5%',
+          marginTop: '10%',
         }}
       >
         <AntDesign
@@ -38,16 +37,16 @@ const GenderForm = () => {
           name="arrowright"
           size={40}
           color="black"
-          onPress={() => navigation.navigate("AgeForm")}
+          onPress={() => navigation.navigate('AgeForm')}
         />
       </View>
-      <View style={{ marginTop: "35%" }}>
+      <View style={{ marginTop: '35%' }}>
         <Text
           style={{
-            textAlign: "center",
-            fontWeight: "700",
+            textAlign: 'center',
+            fontWeight: '700',
             fontSize: 20,
-            color: "#3E445F",
+            color: '#3E445F',
             marginBottom: 32,
           }}
         >
@@ -86,20 +85,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderWidth: 1,
     borderRadius: 99,
-    backgroundColor: "#4B6AB9",
+    backgroundColor: '#4B6AB9',
     opacity: 0.6,
-    marginHorizontal: "8%",
+    marginHorizontal: '8%',
+    borderColor: '#4B6AB9',
   },
   selectedOptionButton: {
-    backgroundColor: "#4B6AB9",
+    backgroundColor: '#4B6AB9',
     opacity: 1,
   },
   optionText: {
     fontSize: 16,
-    textAlign: "center",
-    color: "#fff",
+    textAlign: 'center',
+    color: '#fff',
   },
   selectedOptionText: {
-    color: "#fff",
+    color: '#fff',
   },
 });

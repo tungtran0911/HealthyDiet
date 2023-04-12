@@ -1,18 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { TouchableOpacity } from "react-native";
-import { useState } from "react";
-
-import { useNavigation } from "@react-navigation/native";
-import { AntDesign } from "@expo/vector-icons";
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { AntDesign } from '@expo/vector-icons';
 
 const AimForm = () => {
   const navigation = useNavigation();
   const options = [
-    { label: "Tăng cân", value: "option1" },
-    { label: "Giảm cân", value: "option2" },
-    { label: "Giữ cân", value: "option3" },
-    { label: "Cải thiện sức khỏe", value: "option4" },
+    { label: 'Tăng cân', value: 'option1' },
+    { label: 'Giảm cân', value: 'option2' },
+    { label: 'Giữ cân', value: 'option3' },
+    { label: 'Cải thiện sức khỏe', value: 'option4' },
   ];
 
   const [selectedOption, setSelectedOption] = useState(options[0].value);
@@ -25,26 +23,26 @@ const AimForm = () => {
     <View>
       <View
         style={{
-          flexDirection: "row",
-          justifyContent: "flex-end",
-          marginHorizontal: "5%",
-          marginTop: "10%",
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+          marginHorizontal: '5%',
+          marginTop: '10%',
         }}
       >
         <AntDesign
           name="arrowright"
           size={40}
           color="black"
-          onPress={() => navigation.navigate("GenderForm")}
+          onPress={() => navigation.navigate('GenderForm')}
         />
       </View>
-      <View style={{ marginTop: "35%" }}>
+      <View style={{ marginTop: '35%' }}>
         <Text
           style={{
-            textAlign: "center",
-            fontWeight: "700",
+            textAlign: 'center',
+            fontWeight: '700',
             fontSize: 20,
-            color: "#3E445F",
+            color: '#3E445F',
             marginBottom: 32,
           }}
         >
@@ -82,21 +80,22 @@ const styles = StyleSheet.create({
     paddingVertical: 25,
     paddingHorizontal: 20,
     borderWidth: 1,
-    borderRadius: 99,
-    backgroundColor: "#4B6AB9",
+    borderRadius: 90,
+    backgroundColor: '#4B6AB9',
     opacity: 0.6,
-    marginHorizontal: "8%",
+    marginHorizontal: '8%',
+    borderColor: '#4B6AB9',
   },
   selectedOptionButton: {
-    backgroundColor: "#4B6AB9",
+    backgroundColor: '#4B6AB9',
     opacity: 1,
   },
   optionText: {
     fontSize: 16,
-    textAlign: "center",
-    color: "#fff",
+    textAlign: 'center',
+    color: '#fff',
   },
   selectedOptionText: {
-    color: "#fff",
+    color: '#fff',
   },
 });

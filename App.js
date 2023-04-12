@@ -1,6 +1,6 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import RootStack from "./src/router/Stack";
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import RootStack from './src/router/Stack';
 
 export default function App() {
   return (
