@@ -5,6 +5,8 @@ import Aim from '../screenComponent/Aim';
 import ProgressCalo from '../screenComponent/ProgressCalo';
 import Water from '../screenComponent/Water';
 import CardHome from '../screenComponent/CardHome';
+import FoodHome from '../screenComponent/FoodHome';
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
 
 const Home = () => {
   return (
@@ -35,8 +37,44 @@ const Home = () => {
         >
           <Aim />
         </View>
-        <View style={{ marginTop: '10%' }}>
+        <View style={{ marginTop: '20%' }}>
           <CardHome />
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginHorizontal: '10%',
+            marginBottom: '5%',
+          }}
+        >
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <Ionicons
+              name="ios-heart-outline"
+              size={24}
+              color="#00113D"
+              style={{ marginRight: 8 }}
+            />
+            <Text style={{ color: '#00113D', fontWeight: '700', fontSize: 14 }}>
+              Gợi ý chế độ ăn cho bạn
+            </Text>
+          </View>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ marginRight: 7, color: '#B1B1B1' }}>Xem thêm</Text>
+            <FontAwesome name="angle-right" size={24} color="#B1B1B1" />
+          </View>
+        </View>
+        <View
+          style={{
+            width: '100%',
+          }}
+        >
+          <FoodHome />
         </View>
       </View>
     </ScrollView>
