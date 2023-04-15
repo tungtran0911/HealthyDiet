@@ -1,18 +1,9 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Modal,
-  Alert,
-  FlatList,
-} from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
+import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
-import { TextInput } from "react-native";
-import { FontAwesome, Ionicons } from "@expo/vector-icons";
 
-const Recipe = () => {
+const SearchBar = () => {
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = (text) => {
@@ -39,7 +30,7 @@ const Recipe = () => {
   );
 };
 
-export default Recipe;
+export default SearchBar;
 
 const styles = StyleSheet.create({
   searchBar: {
@@ -48,9 +39,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     height: 45,
     borderRadius: 15,
-    marginHorizontal: 20,
     marginVertical: 10,
-    width: "80%",
+    width: "90%",
+    backgroundColor: "#fff",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 1,
   },
   searchIcon: {
     marginHorizontal: 14,
