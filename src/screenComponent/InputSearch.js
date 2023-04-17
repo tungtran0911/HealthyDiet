@@ -1,36 +1,36 @@
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 
-const SearchBar = () => {
-  const navigation = useNavigation();
+const InputSearch = () => {
+  const [searchHistory, setSearchHistory] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = (text) => {
+    setSearchText(text);
+    // Perform search operation
+  };
 
   return (
-    <TouchableOpacity
-      style={styles.searchBar}
-      onPress={() => navigation.navigate("HistorySeach")}
-    >
+    <View style={styles.searchBar}>
       <Ionicons
         name="ios-search-outline"
         size={30}
         color="#B1B1B1"
         style={styles.searchIcon}
       />
-
-      <Text style={styles.textInput}>Tìm kiếm món ăn</Text>
-    </TouchableOpacity>
+      <TextInput
+        style={styles.textInput}
+        value={searchText}
+        placeholder="Tìm kiếm món ăn"
+        placeholderTextColor="#B1B1B1"
+      />
+    </View>
   );
 };
 
-export default SearchBar;
+export default InputSearch;
 
 const styles = StyleSheet.create({
   searchBar: {
@@ -52,6 +52,6 @@ const styles = StyleSheet.create({
   },
   textInput: {
     flex: 1,
-    color: "#C4C4C4",
+    height: "100%",
   },
 });

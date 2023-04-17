@@ -1,0 +1,81 @@
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import * as Progress from "react-native-progress";
+import SearchBar from "../screenComponent/SearchBar";
+import GroupScreen from "../screenComponent/GroupScreen";
+
+const MealAllDay = () => {
+  return (
+    <View>
+      <View
+        style={{
+          height: 280,
+          borderWidth: 1,
+          paddingTop: "10%",
+          borderRadius: 30,
+          width: "100%",
+        }}
+      >
+        <View style={{ alignSelf: "center" }}>
+          <Text style={{ marginBottom: "3%", fontSize: 16, color: "#00113D" }}>
+            Lượng calo đã nạp
+          </Text>
+          <Text>
+            500 kcal<Text>/1400 kcal</Text>
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-around",
+            marginTop: "5%",
+          }}
+        >
+          <View>
+            <Text style={{ color: "#00113D", fontSize: 12 }}>Carbs</Text>
+            <Progress.Bar
+              progress={0.4}
+              width={41}
+              color="#6BD2A7"
+              height={5}
+              style={{ marginVertical: "6%" }}
+            />
+            <Text style={{ color: "#B1B1B1", fontSize: 12 }}>20g</Text>
+          </View>
+          <View>
+            <Text style={{ color: "#00113D", fontSize: 12 }}>30/200g</Text>
+            <Progress.Bar
+              progress={0.4}
+              width={41}
+              color="#93CAFC"
+              height={4}
+              style={{ marginVertical: "6%" }}
+            />
+            <Text style={{ color: "#B1B1B1", fontSize: 12 }}>Carbs</Text>
+          </View>
+          <View>
+            <Text style={{ color: "#00113D", fontSize: 12 }}>30/200g</Text>
+            <Progress.Bar
+              progress={0.4}
+              width={41}
+              color="#F9BBF9"
+              height={4}
+              style={{ marginVertical: "6%" }}
+            />
+            <Text style={{ color: "#B1B1B1", fontSize: 12 }}>Carbs</Text>
+          </View>
+        </View>
+        <View style={{ alignSelf: "center" }}>
+          <SearchBar />
+        </View>
+        <View>
+          <GroupScreen />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export default MealAllDay;
+
+const styles = StyleSheet.create({});

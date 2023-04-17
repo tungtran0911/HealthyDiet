@@ -18,6 +18,7 @@ import WeightForm from "../screen/WeightForm";
 import WeightWantForm from "../screen/WeightWantForm";
 import MonthForm from "../screen/MonthForm";
 import DoneForm from "../screen/DoneForm";
+import HistorySeach from "../screen/HistorySeach";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -33,6 +34,7 @@ function AddStacks() {
   return (
     <AddStack.Navigator screenOptions={{ headerShown: false }}>
       <AddStack.Screen name="Add Stack" component={Add} />
+      <AddStack.Screen name="HistorySeach" component={HistorySeach} />
     </AddStack.Navigator>
   );
 }

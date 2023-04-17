@@ -11,29 +11,26 @@ import React from "react";
 import { useState } from "react";
 import { TextInput } from "react-native";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 const Recipe = () => {
-  const [searchText, setSearchText] = useState("");
+  const route = useRoute();
+  const navigation = useNavigation();
+  const { searchHistory } = route.params;
 
-  const handleSearch = (text) => {
-    setSearchText(text);
-    // Perform search operation
+  const handlePressKeyword = (keyword) => {
+    // Điều hướng trở lại màn hình tìm kiếm với từ khóa được chọn
+    navigation.navigate("Follow Stack", { searchText: keyword });
   };
 
   return (
-    <View style={styles.searchBar}>
-      <Ionicons
-        name="ios-search-outline"
-        size={30}
-        color="#B1B1B1"
-        style={styles.searchIcon}
-      />
-      <TextInput
-        style={styles.textInput}
-        onChangeText={handleSearch}
-        value={searchText}
-        placeholder="Tìm kiếm món ăn"
-        placeholderTextColor="#B1B1B1"
+    <View>
+      <FlatList
+        data={route.params.searchHistory}
+        renderItem={({ item }) => (
+          <Text onPress={() => handlePressKeyword(item)}>{item}</Text>
+        )}
+        keyExtractor={(item, index) => index.toString()}
       />
     </View>
   );
