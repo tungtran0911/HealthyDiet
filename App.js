@@ -5,7 +5,7 @@ import RootStack from './src/router/Stack';
 export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar backgroundColor="black" />
+      <StatusBar backgroundColor="black" style={{ paddingBottom: '5%' }} />
       <RootStack />
     </SafeAreaView>
   );

@@ -14,7 +14,9 @@ const Home = () => {
       <View>
         <View>
           <ProgressCalo />
-          <Water />
+          <View style={{ marginTop: '145%' }}>
+            <Water />
+          </View>
         </View>
 
         <View
