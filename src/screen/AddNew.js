@@ -25,11 +25,11 @@ const AddNew = () => {
           <AntDesign name="right" size={12} color="#B1B1B1" />
         </View>
       </View>
-      <View style={{ marginHorizontal: '7%' }}>
-        <CardSearch />
-      </View>
       <View>
         <Water />
+      </View>
+      <View style={{ marginHorizontal: '7%' }}>
+        <CardSearch />
       </View>
     </View>
   );
