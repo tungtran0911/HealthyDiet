@@ -8,31 +8,37 @@ import {
 } from "@expo/vector-icons";
 import * as Progress from "react-native-progress";
 
-const CardSearch = () => {
+const CardBreakfast = () => {
   return (
     <View>
       <View
         style={{
-          width: "80%",
+          width: "65%",
           borderWidth: 1,
-          height: 109,
+          height: 114,
           borderRadius: 10,
+          backgroundColor: "#FFD4E4",
         }}
       >
         <View
           style={{
-            width: "100%",
             flexDirection: "row",
             marginLeft: "6%",
-            marginTop: "1%",
+            marginTop: "4%",
           }}
         >
           <Image
-            source={require("../storages/list/listpic1.png")}
+            source={require("../storages/list/listpic4.png")}
             style={{ width: 57, height: 57, borderRadius: 6 }}
           />
-          <View style={{ justifyContent: "space-around", marginLeft: "3%" }}>
-            <Text style={{ fontSize: 14, fontWeight: "700" }}>Trứng luộc</Text>
+          <View
+            style={{
+              justifyContent: "space-around",
+              marginLeft: "3%",
+              width: "50%",
+            }}
+          >
+            <Text style={{ fontSize: 14, fontWeight: "700" }}>Cơm gạo lứt</Text>
             <View
               style={{
                 flexDirection: "row",
@@ -52,18 +58,26 @@ const CardSearch = () => {
               <Text style={{ fontSize: 10, marginLeft: 6 }}>1 quả - 100g</Text>
             </View>
           </View>
-          <View
-            style={{
-              marginLeft: "34%",
-              borderRadius: 5,
-              borderWidth: 1,
-              height: 23,
-              width: 23,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Entypo name="plus" size={22} color="black" />
+          <View style={{}}>
+            <View
+              style={{
+                alignItems: "center",
+                flexDirection: "row",
+              }}
+            >
+              <Feather name="edit" size={24} color="#C4C4C4" />
+              <MaterialCommunityIcons
+                name="bookmark-minus"
+                size={28}
+                color="#AFF242"
+                style={{
+                  marginRight: "5%",
+                  marginTop: "2%",
+                  marginLeft: "20%",
+                }}
+              />
+            </View>
+            <Text style={{ fontSize: 8 }}>200 kcal/100 gam</Text>
           </View>
         </View>
         <View
@@ -106,12 +120,24 @@ const CardSearch = () => {
             />
             <Text style={{ color: "#B1B1B1", fontSize: 8 }}>Carbs</Text>
           </View>
+          <View
+            style={{
+              borderRadius: 20,
+              borderWidth: 1,
+              height: 23,
+              width: 23,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Entypo name="plus" size={22} color="#00113D" />
+          </View>
         </View>
       </View>
     </View>
   );
 };
 
-export default CardSearch;
+export default CardBreakfast;
 
 const styles = StyleSheet.create({});

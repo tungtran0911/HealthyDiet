@@ -2,8 +2,10 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { AntDesign, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import ButtonMeal from "./ButtonMeal";
+import SearchBar from "./SearchBar";
+import DiaryButtonGroup from "./DiaryButtonGroup";
 
-const HeaderAdd = () => {
+const HeaderDiary = () => {
   const today = new Date();
   const day = today.getDate();
   const month = today.getMonth() + 1;
@@ -20,20 +22,19 @@ const HeaderAdd = () => {
             width: "100%",
             alignSelf: "center",
             paddingTop: "5%",
-            height: 120,
-            backgroundColor: "#00113D",
+            height: 200,
+            backgroundColor: "#CCE9F2",
           }}
         >
           <View
             style={{
               flexDirection: "row",
               alignItems: "center",
-              marginHorizontal: "10%",
+              marginHorizontal: "7%",
             }}
           >
             <View
               style={{
-                borderWidth: 1,
                 borderRadius: 6,
                 width: 30,
                 height: 30,
@@ -49,11 +50,11 @@ const HeaderAdd = () => {
                 fontSize: 16,
                 fontWeight: "700",
                 textAlign: "center",
-                marginLeft: "25%",
-                color: "white",
+                marginLeft: "20%",
+                color: "black",
               }}
             >
-              Tạo thực đơn
+              Nhật ký dinh dưỡng
             </Text>
             <View
               style={{
@@ -64,16 +65,19 @@ const HeaderAdd = () => {
               <MaterialCommunityIcons
                 name="bell"
                 size={24}
-                color="white"
-                style={{ marginLeft: "35%" }}
+                color="#00113D"
+                style={{ marginLeft: "30%" }}
               />
               <MaterialCommunityIcons
                 name="bookmark-minus"
                 size={28}
-                color="white"
+                color="#00113D"
                 style={{ marginLeft: "5%" }}
               />
             </View>
+          </View>
+          <View style={{ alignSelf: "center" }}>
+            <SearchBar />
           </View>
           <View
             style={{
@@ -81,25 +85,47 @@ const HeaderAdd = () => {
               alignItems: "center",
               justifyContent: "space-between",
               marginHorizontal: "9%",
-              marginTop: "8%",
+              marginTop: "3%",
             }}
           >
-            <AntDesign name="left" size={24} color="white" />
+            <View
+              style={{
+                borderRadius: 20,
+                width: 20,
+                height: 20,
+                backgroundColor: "#00113D",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <AntDesign name="left" size={13} color="white" />
+            </View>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Feather name="calendar" size={24} color="white" />
-              <Text style={{ color: "white", marginLeft: "5%" }}>
+              <Feather name="calendar" size={24} color="#00113D" />
+              <Text style={{ color: "#00113D", marginLeft: "5%" }}>
                 Hôm nay, {day} th {month}
               </Text>
             </View>
-            <AntDesign name="right" size={24} color="white" />
+            <View
+              style={{
+                borderRadius: 20,
+                width: 20,
+                height: 20,
+                backgroundColor: "#00113D",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <AntDesign name="right" size={13} color="white" />
+            </View>
           </View>
         </View>
-        <ButtonMeal />
+        <DiaryButtonGroup />
       </View>
     </View>
   );
 };
 
-export default HeaderAdd;
+export default HeaderDiary;
 
 const styles = StyleSheet.create({});

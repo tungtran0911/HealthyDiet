@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import SearchBar from "../screenComponent/SearchBar";
@@ -12,7 +12,6 @@ const Add = () => {
   return (
     <View style={{ backgroundColor: "white", height: "100%" }}>
       <HeaderAdd />
-      <ButtonMeal />
     </View>
   );
 };

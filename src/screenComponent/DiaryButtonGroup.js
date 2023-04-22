@@ -5,13 +5,16 @@ import { useState } from "react";
 
 import MealAllDay from "../screen/MealAllDay";
 import MealBreakfast from "../screen/MealBreakfast";
+import AlldayDiary from "../screen/AlldayDiary";
 
-const ButtonMeal = () => {
+const DiaryButtonGroup = () => {
   const buttons = [
     {
       id: 1,
       label: "Cả ngày",
-      content: <MealAllDay />,
+      content: <AlldayDiary />,
+      color: "#00113D",
+      textColor: "##FFFFFF",
     },
     { id: 2, label: "B.sáng", content: <MealBreakfast /> },
     { id: 3, label: "B.trưa" },
@@ -73,7 +76,7 @@ const ButtonMeal = () => {
   );
 };
 
-export default ButtonMeal;
+export default DiaryButtonGroup;
 
 const styles = StyleSheet.create({
   container: {
@@ -85,22 +88,28 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#00113D",
-    height: 85,
+    backgroundColor: "#FFFFFF",
+    height: 60,
     width: "100%",
+    borderRadius: 20,
+    backgroundColor: "#fff",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 1,
   },
   button: {
     paddingHorizontal: 3,
     paddingVertical: 8,
     borderWidth: 1,
-    borderColor: "white",
+    borderColor: "#00113D",
     marginHorizontal: 5,
     borderRadius: 5,
-    color: "white",
+    color: "#00113D",
   },
   activeButton: {
-    backgroundColor: "white",
-    color: "#00113D",
+    backgroundColor: "#00113D",
+    color: "#FFFFFF",
     borderRadius: 5,
     fontWeight: "700",
     fontSize: 12,

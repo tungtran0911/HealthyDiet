@@ -3,8 +3,9 @@ import React from "react";
 import AddNew from "../screen/AddNew";
 import AddGroup from "../screen/AddGroup";
 import { useState } from "react";
+import General from "../screen/General";
 
-const GroupScreen = () => {
+const GroupScreen_1 = () => {
   const [screen, setScreen] = useState("screen1");
   return (
     <View>
@@ -25,14 +26,14 @@ const GroupScreen = () => {
         </TouchableOpacity>
       </View>
       <View style={{ marginTop: "10%" }}>
-        {screen === "screen1" && <AddNew />}
+        {screen === "screen1" && <General />}
         {screen === "screen2" && <AddGroup />}
       </View>
     </View>
   );
 };
 
-export default GroupScreen;
+export default GroupScreen_1;
 
 const styles = StyleSheet.create({
   tabContainer: {

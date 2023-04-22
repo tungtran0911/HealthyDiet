@@ -3,8 +3,9 @@ import React from "react";
 import * as Progress from "react-native-progress";
 import SearchBar from "../screenComponent/SearchBar";
 import GroupScreen from "../screenComponent/GroupScreen";
+import GroupScreen_1 from "../screenComponent/GroupScreen_1";
 
-const MealAllDay = () => {
+const MealBreakfast = () => {
   return (
     <ScrollView style={{ height: "100%" }}>
       <View
@@ -69,11 +70,11 @@ const MealAllDay = () => {
           <SearchBar />
         </View>
       </View>
-      <GroupScreen />
+      <GroupScreen_1 />
     </ScrollView>
   );
 };
 
-export default MealAllDay;
+export default MealBreakfast;
 
 const styles = StyleSheet.create({});

@@ -1,24 +1,18 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import CardSearch from "../screenComponent/CardSearch";
-import Water from "../screenComponent/Water";
-import CardMeal from "../screenComponent/CardMeal";
 import SaveCard from "../screenComponent/SaveCard";
 import CardSuggest from "../screenComponent/CardSuggest";
-import { useNavigation } from "@react-navigation/native";
+import CardBreakfast from "../screenComponent/CardBreakfast";
 
-const AddNew = () => {
-  const navigation = useNavigation();
+const General = () => {
   return (
     <View style={{ flex: 1, height: "100%" }}>
-      <View>
-        <Water />
+      <View style={{ alignItems: "center" }}>
+        <CardBreakfast />
       </View>
-      <View style={{ marginTop: "5%" }}>
-        <CardMeal />
-      </View>
-      <TouchableOpacity
+      <View
         style={{
           width: "80%",
           height: 41,
@@ -30,12 +24,11 @@ const AddNew = () => {
           alignSelf: "center",
           marginTop: "6%",
         }}
-        onPress={() => navigation.navigate("DiaryMeal")}
       >
         <Text style={{ color: "#4B6AB9", fontWeight: "700" }}>
           Lập chi tiết
         </Text>
-      </TouchableOpacity>
+      </View>
       <View
         style={{
           flexDirection: "row",
@@ -105,6 +98,6 @@ const AddNew = () => {
   );
 };
 
-export default AddNew;
+export default General;
 
 const styles = StyleSheet.create({});
