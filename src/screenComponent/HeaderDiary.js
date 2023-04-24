@@ -22,7 +22,7 @@ const HeaderDiary = () => {
             width: "100%",
             alignSelf: "center",
             paddingTop: "5%",
-            height: 200,
+            height: 170,
             backgroundColor: "#CCE9F2",
           }}
         >

@@ -6,6 +6,7 @@ import { useState } from "react";
 import MealAllDay from "../screen/MealAllDay";
 import MealBreakfast from "../screen/MealBreakfast";
 import AlldayDiary from "../screen/AlldayDiary";
+import BreakfastDiary from "../screen/BreakfastDiary";
 
 const DiaryButtonGroup = () => {
   const buttons = [
@@ -16,7 +17,7 @@ const DiaryButtonGroup = () => {
       color: "#00113D",
       textColor: "##FFFFFF",
     },
-    { id: 2, label: "B.sáng", content: <MealBreakfast /> },
+    { id: 2, label: "B.sáng", content: <BreakfastDiary /> },
     { id: 3, label: "B.trưa" },
   ];
   const [activeIndex, setActiveIndex] = useState(0);
