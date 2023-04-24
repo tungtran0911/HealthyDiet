@@ -1,24 +1,25 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
-import PagerView from "react-native-pager-view";
-import { useState } from "react";
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import PagerView from 'react-native-pager-view';
+import { useState } from 'react';
 
-import MealAllDay from "../screen/MealAllDay";
-import MealBreakfast from "../screen/MealBreakfast";
-import AlldayDiary from "../screen/AlldayDiary";
-import BreakfastDiary from "../screen/BreakfastDiary";
+import MealAllDay from '../screen/MealAllDay';
+import MealBreakfast from '../screen/MealBreakfast';
+import AlldayDiary from '../screen/AlldayDiary';
+import BreakfastDiary from '../screen/BreakfastDiary';
+import NoMeal from '../screen/NoMeal';
 
 const DiaryButtonGroup = () => {
   const buttons = [
     {
       id: 1,
-      label: "Cả ngày",
+      label: 'Cả ngày',
       content: <AlldayDiary />,
-      color: "#00113D",
-      textColor: "##FFFFFF",
+      color: '#00113D',
+      textColor: '##FFFFFF',
     },
-    { id: 2, label: "B.sáng", content: <BreakfastDiary /> },
-    { id: 3, label: "B.trưa" },
+    { id: 2, label: 'B.sáng', content: <BreakfastDiary /> },
+    { id: 3, label: 'B.trưa', content: <NoMeal /> },
   ];
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -68,7 +69,14 @@ const DiaryButtonGroup = () => {
         ref={(ref) => (pagerRef = ref)}
       >
         {buttons.map((button, index) => (
-          <ScrollView key={button.id}>
+          <ScrollView
+            key={button.id}
+            style={{
+              backgroundColor: 'white',
+              height: '100%',
+              marginTop: '2%',
+            }}
+          >
             <View>{button.content}</View>
           </ScrollView>
         ))}
@@ -82,19 +90,19 @@ export default DiaryButtonGroup;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FFFFFF",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
     height: 60,
-    width: "100%",
+    width: '100%',
     borderRadius: 20,
-    backgroundColor: "#fff",
-    shadowColor: "#000",
+    backgroundColor: '#fff',
+    shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 1,
@@ -103,30 +111,30 @@ const styles = StyleSheet.create({
     paddingHorizontal: 3,
     paddingVertical: 8,
     borderWidth: 1,
-    borderColor: "#00113D",
+    borderColor: '#00113D',
     marginHorizontal: 5,
     borderRadius: 5,
-    color: "#00113D",
+    color: '#00113D',
   },
   activeButton: {
-    backgroundColor: "#00113D",
-    color: "#FFFFFF",
+    backgroundColor: '#00113D',
+    color: '#FFFFFF',
     borderRadius: 5,
-    fontWeight: "700",
+    fontWeight: '700',
     fontSize: 12,
   },
   separator: {
-    color: "white",
+    color: 'white',
     marginHorizontal: 5,
     borderRadius: 5,
   },
   pagerView: {
     flex: 1,
-    width: "100%",
+    width: '100%',
   },
   screen: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
